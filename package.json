@@ -1,0 +1,22 @@
+{
+  "name": "guidance-replay",
+  "version": "0.1.0",
+  "main": "index.js",
+  "scripts": {
+    "pretest": "eslint lib test *.js",
+    "test": "tape test/*.test.js",
+    "start": "budo sim/index.js:sim/bundle.js --dir sim/ --live -- -t [ envify --NODE_ENV development ]",
+    "docs": "documentation build lib/* -o docs.md -f md"
+  },
+  "dependencies": {
+    "budo": "^8.1.0",
+    "documentation": "^4.0.0-beta",
+    "envify": "^3.4.0",
+    "eslint": "^2.4.0",
+    "tape": "^4.5.1",
+    "turf-along": "~1.0.2",
+    "turf-bearing": "~1.0.2",
+    "turf-distance": "~1.1.0",
+    "turf-line-distance": "~1.0.2"
+  }
+}

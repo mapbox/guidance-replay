@@ -1,0 +1,133 @@
+{
+  "origin": {
+    "type": "Feature",
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        -77.03239440917969,
+        38.9126091003418
+      ]
+    },
+    "properties": {
+      "name": "R Street Northwest"
+    }
+  },
+  "destination": {
+    "type": "Feature",
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        -77.03266906738281,
+        38.91335678100586
+      ]
+    },
+    "properties": {
+      "name": ""
+    }
+  },
+  "waypoints": [],
+  "routes": [
+    {
+      "distance": 107,
+      "duration": 29,
+      "summary": "R Street Northwest",
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -77.032394,
+            38.912609
+          ],
+          [
+            -77.0326,
+            38.912608
+          ],
+          [
+            -77.03267,
+            38.912608
+          ],
+          [
+            -77.032674,
+            38.913151
+          ],
+          [
+            -77.032669,
+            38.913356
+          ]
+        ]
+      },
+      "steps": [
+        {
+          "maneuver": {
+            "type": "depart",
+            "location": {
+              "type": "Point",
+              "coordinates": [
+                -77.032394,
+                38.912609
+              ]
+            },
+            "instruction": "Head west on R Street Northwest"
+          },
+          "distance": 24,
+          "duration": 22,
+          "way_name": "R Street Northwest",
+          "direction": "W",
+          "heading": 270,
+          "mode": "driving"
+        },
+        {
+          "maneuver": {
+            "type": "turn right",
+            "location": {
+              "type": "Point",
+              "coordinates": [
+                -77.03267,
+                38.912608
+              ]
+            },
+            "instruction": "Turn right"
+          },
+          "distance": 60,
+          "duration": 7,
+          "way_name": "",
+          "direction": "N",
+          "heading": 0,
+          "mode": "driving"
+        },
+        {
+          "maneuver": {
+            "type": "continue",
+            "location": {
+              "type": "Point",
+              "coordinates": [
+                -77.032674,
+                38.913151
+              ]
+            },
+            "instruction": "Continue"
+          },
+          "distance": 23,
+          "duration": 3,
+          "way_name": "",
+          "direction": "N",
+          "heading": 0,
+          "mode": "driving"
+        },
+        {
+          "maneuver": {
+            "type": "arrive",
+            "location": {
+              "type": "Point",
+              "coordinates": [
+                -77.032669,
+                38.913356
+              ]
+            },
+            "instruction": "You have arrived at your destination"
+          }
+        }
+      ]
+    }
+  ]
+}

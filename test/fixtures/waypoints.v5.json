@@ -1,0 +1,344 @@
+{
+  "code": "ok",
+  "routes": [
+    {
+      "geometry": {
+        "coordinates": [
+          [
+            -122.414709,
+            37.802627
+          ],
+          [
+            -122.414518,
+            37.801697
+          ],
+          [
+            -122.414419,
+            37.801234
+          ],
+          [
+            -122.414321,
+            37.800755
+          ],
+          [
+            -122.414241,
+            37.800356
+          ],
+          [
+            -122.414231,
+            37.8003
+          ],
+          [
+            -122.414129,
+            37.799836
+          ],
+          [
+            -122.414594,
+            37.799774
+          ],
+          [
+            -122.415199,
+            37.799697
+          ],
+          [
+            -122.415785,
+            37.799623
+          ],
+          [
+            -122.416538,
+            37.79953
+          ],
+          [
+            -122.41741,
+            37.799405
+          ],
+          [
+            -122.417543,
+            37.799969
+          ],
+          [
+            -122.417615,
+            37.800312
+          ]
+        ],
+        "type": "LineString"
+      },
+      "legs": [
+        {
+          "summary": "",
+          "duration": 42,
+          "steps": [
+            {
+              "geometry": {
+                "coordinates": [
+                  [
+                    -122.414709,
+                    37.802627
+                  ],
+                  [
+                    -122.414707,
+                    37.802617
+                  ],
+                  [
+                    -122.414518,
+                    37.801697
+                  ],
+                  [
+                    -122.414419,
+                    37.801234
+                  ],
+                  [
+                    -122.414324,
+                    37.800766
+                  ],
+                  [
+                    -122.414321,
+                    37.800755
+                  ]
+                ],
+                "type": "LineString"
+              },
+              "maneuver": {
+                "exit": 4,
+                "bearing_after": 0,
+                "bearing_before": 167.83903508925567,
+                "location": [
+                  -122.414709,
+                  37.802627
+                ],
+                "type": "depart",
+                "instruction": "Head southeast on Taylor St"
+              },
+              "mode": "driving",
+              "duration": 42,
+              "name": "Taylor St",
+              "distance": 210.99194527762242
+            },
+            {
+              "geometry": {
+                "coordinates": [],
+                "type": "LineString"
+              },
+              "maneuver": {
+                "bearing_after": 171.02006898615062,
+                "bearing_before": 0,
+                "location": [
+                  -122.414709,
+                  37.802627
+                ],
+                "type": "arrive",
+                "instruction": "You have arrived at your first destination"
+              },
+              "mode": "driving",
+              "duration": 0,
+              "name": "Taylor St",
+              "distance": 0
+            }
+          ],
+          "distance": 210.99194527762242
+        },
+        {
+          "summary": "Union St, Leavenworth St",
+          "duration": 103.4,
+          "steps": [
+            {
+              "geometry": {
+                "coordinates": [
+                  [
+                    -122.414321,
+                    37.800755
+                  ],
+                  [
+                    -122.414241,
+                    37.800356
+                  ],
+                  [
+                    -122.414231,
+                    37.8003
+                  ],
+                  [
+                    -122.414129,
+                    37.799836
+                  ]
+                ],
+                "type": "LineString"
+              },
+              "maneuver": {
+                "exit": 1,
+                "bearing_after": 0,
+                "bearing_before": 80.56437505632786,
+                "location": [
+                  -122.414321,
+                  37.800755
+                ],
+                "type": "depart",
+                "instruction": "Head east on Taylor St towards Union St"
+              },
+              "mode": "driving",
+              "duration": 32.3,
+              "name": "Taylor St",
+              "distance": 103.6049074673129
+            },
+            {
+              "geometry": {
+                "coordinates": [
+                  [
+                    -122.414129,
+                    37.799836
+                  ],
+                  [
+                    -122.414594,
+                    37.799774
+                  ],
+                  [
+                    -122.415199,
+                    37.799697
+                  ],
+                  [
+                    -122.415785,
+                    37.799623
+                  ],
+                  [
+                    -122.416538,
+                    37.79953
+                  ],
+                  [
+                    -122.41741,
+                    37.799405
+                  ]
+                ],
+                "type": "LineString"
+              },
+              "maneuver": {
+                "exit": 2,
+                "bearing_after": 260.42211983410436,
+                "bearing_before": 170.14613777034742,
+                "location": [
+                  -122.414129,
+                  37.799836
+                ],
+                "modifier": "right",
+                "type": "turn",
+                "instruction": "Turn right onto Union St"
+              },
+              "mode": "driving",
+              "duration": 40,
+              "name": "Union St",
+              "distance": 292.3265955734885
+            },
+            {
+              "geometry": {
+                "coordinates": [
+                  [
+                    -122.41741,
+                    37.799405
+                  ],
+                  [
+                    -122.417543,
+                    37.799969
+                  ],
+                  [
+                    -122.417615,
+                    37.800312
+                  ]
+                ],
+                "type": "LineString"
+              },
+              "maneuver": {
+                "bearing_after": 349.4450660655347,
+                "bearing_before": 259.71767009007624,
+                "location": [
+                  -122.41741,
+                  37.799405
+                ],
+                "modifier": "right",
+                "type": "turn",
+                "instruction": "Turn right onto Leavenworth St"
+              },
+              "mode": "driving",
+              "duration": 30.2,
+              "name": "Leavenworth St",
+              "distance": 102.48317988958686
+            },
+            {
+              "geometry": {
+                "coordinates": [
+                  [
+                    -122.417615,
+                    37.800312
+                  ],
+                  [
+                    -122.417516,
+                    37.800325
+                  ]
+                ],
+                "type": "LineString"
+              },
+              "maneuver": {
+                "bearing_after": 80.56437505632786,
+                "bearing_before": 350.5825007892682,
+                "location": [
+                  -122.417615,
+                  37.800312
+                ],
+                "modifier": "right",
+                "type": "turn",
+                "instruction": "Turn right onto Filbert St"
+              },
+              "mode": "driving",
+              "duration": 0.9,
+              "name": "Filbert St",
+              "distance": 8.820008560624464
+            },
+            {
+              "geometry": {
+                "coordinates": [],
+                "type": "LineString"
+              },
+              "maneuver": {
+                "bearing_after": 170.99765935608355,
+                "bearing_before": 0,
+                "location": [
+                  -122.414321,
+                  37.800755
+                ],
+                "type": "arrive",
+                "instruction": "You have arrived at your final destination"
+              },
+              "mode": "driving",
+              "duration": 0,
+              "name": "Filbert St",
+              "distance": 0
+            }
+          ],
+          "distance": 507.2346914910127
+        }
+      ],
+      "duration": 145.4,
+      "distance": 718.2266367686351
+    }
+  ],
+  "waypoints": [
+    {
+      "name": "Taylor St",
+      "location": [
+        -122.414709,
+        37.802627
+      ]
+    },
+    {
+      "name": "Taylor St",
+      "location": [
+        -122.414321,
+        37.800755
+      ]
+    },
+    {
+      "name": "Filbert St",
+      "location": [
+        -122.417516,
+        37.800325
+      ]
+    }
+  ]
+}

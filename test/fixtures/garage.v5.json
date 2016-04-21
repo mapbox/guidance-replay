@@ -1,0 +1,147 @@
+{
+  "code": "ok",
+  "routes": [
+    {
+      "geometry": {
+        "coordinates": [
+          [
+            -77.032395,
+            38.912603
+          ],
+          [
+            -77.032595,
+            38.912603
+          ],
+          [
+            -77.032678,
+            38.912603
+          ],
+          [
+            -77.032678,
+            38.91315
+          ],
+          [
+            -77.032675,
+            38.913357
+          ]
+        ],
+        "type": "LineString"
+      },
+      "legs": [
+        {
+          "summary": "",
+          "duration": 31.4,
+          "steps": [
+            {
+              "geometry": {
+                "coordinates": [
+                  [
+                    -77.032395,
+                    38.912603
+                  ],
+                  [
+                    -77.032595,
+                    38.912603
+                  ],
+                  [
+                    -77.032678,
+                    38.912603
+                  ]
+                ],
+                "type": "LineString"
+              },
+              "maneuver": {
+                "bearing_after": 0,
+                "bearing_before": 270.0000260667663,
+                "location": [
+                  -77.032678,
+                  38.912603
+                ],
+                "type": "depart",
+                "instruction": "Head northwest on R St NW"
+              },
+              "mode": "driving",
+              "duration": 20.8,
+              "name": "R St NW",
+              "distance": 24.492444483459483
+            },
+            {
+              "geometry": {
+                "coordinates": [
+                  [
+                    -77.032678,
+                    38.912603
+                  ],
+                  [
+                    -77.032678,
+                    38.91315
+                  ],
+                  [
+                    -77.032675,
+                    38.913357
+                  ]
+                ],
+                "type": "LineString"
+              },
+              "maneuver": {
+                "exit": 1,
+                "bearing_after": 0,
+                "bearing_before": 270.0000260667663,
+                "location": [
+                  -77.032678,
+                  38.912603
+                ],
+                "modifier": "right",
+                "type": "turn",
+                "instruction": "Turn right"
+              },
+              "mode": "driving",
+              "duration": 10.6,
+              "name": "",
+              "distance": 83.86609407653904
+            },
+            {
+              "geometry": {
+                "coordinates": [],
+                "type": "LineString"
+              },
+              "maneuver": {
+                "bearing_after": 0,
+                "bearing_before": 0,
+                "location": [
+                  -77.032675,
+                  38.913357
+                ],
+                "type": "arrive",
+                "instruction": "You have arrived at your final destination"
+              },
+              "mode": "driving",
+              "duration": 0,
+              "name": "",
+              "distance": 0
+            }
+          ],
+          "distance": 108.35853855999852
+        }
+      ],
+      "duration": 31.4,
+      "distance": 108.35853855999852
+    }
+  ],
+  "waypoints": [
+    {
+      "name": "R St NW",
+      "location": [
+        -77.032395,
+        38.912603
+      ]
+    },
+    {
+      "name": "",
+      "location": [
+        -77.032675,
+        38.913357
+      ]
+    }
+  ]
+}
