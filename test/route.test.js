@@ -272,11 +272,6 @@ test('place datapoints [garage]', function(t) {
     assert.equal(thisSpeed, 4.239076929829525);
     assert.equal(nextSpeed, 28.482824403352883);
     assert.equal(thisDist, 24.492444483459483);
-    
-    assert.throws(
-      function() {
-        new Place(thisDist, thisSpeed, nextSpeed, 4);
-      }, /cannot change speed within step constraints/);
 
     var place = new Place(thisDist, thisSpeed, nextSpeed, 5);
 
@@ -296,6 +291,11 @@ test('place datapoints [garage]', function(t) {
     assert.deepEqual(place.seconds(0), { distance: 0, speed: 4.239076929829525 });
     assert.deepEqual(place.seconds(2.085984521938736), { distance: 2.4562913508144355, speed: 4.239076929829525 });
     assert.deepEqual(place.seconds(6.934734016643407), { distance: 24.49244448345948, speed: 28.48282440335288 });
+
+    // This call will adjust the specified rate (1) until it can be achieved (5)
+    var adjustedPlace = new Place(thisDist, thisSpeed, nextSpeed, 1);
+    assert.deepEqual(place.dists, adjustedPlace.dists, 'adjusts rate until possible');
+    assert.deepEqual(place.times, adjustedPlace.times, 'adjusts rate until possible');
 
     assert.end();
   });
