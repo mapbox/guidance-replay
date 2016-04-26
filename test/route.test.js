@@ -42,13 +42,6 @@ test('buildTrace', function(t) {
 test('route', function(t) {
   t.test('garage (v4)', function(assert) {
     var garage = JSON.parse(JSON.stringify(require('./fixtures/garage.v4')));
-    assert.throws(function() { route(garage, { spacing: 'acceldecel' }); }, /v4 directions are only compatible with constant speeds/);
-    assert.doesNotThrow(function() { route (garage, { spacing: 'constant'  }); });
-    assert.end();
-  });
-
-  t.test('garage (v4)', function(assert) {
-    var garage = JSON.parse(JSON.stringify(require('./fixtures/garage.v4')));
     var geojson = route(garage);
     assert.deepEqual(geojson.geometry.coordinates, [
       [ -77.032394, 38.912609 ],
