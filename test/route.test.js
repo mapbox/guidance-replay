@@ -50,7 +50,7 @@ test('route', function(t) {
       [ -77.032674, 38.913151 ],
       [ -77.032669, 38.913356 ]
     ]);
-    assert.deepEqual(geojson.properties.coordinateProperties.times, [ 0, 4828, 6469, 22824, 29000 ]);
+    assert.deepEqual(geojson.properties.coordinateProperties.times, [ 0, 16420, 22000, 29000, 32000 ]);
     assert.end();
   });
 
