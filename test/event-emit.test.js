@@ -83,14 +83,12 @@ test('emit.next', function(t) {
 
 test('emit.next acceldecel', function(assert) {
   var geojson = route(JSON.parse(JSON.stringify(require('./fixtures/garage.v5'))), { spacing: 'acceldecel' });
-  var times = geojson.properties.coordinateProperties.times;
-  var lastTime = times[times.length-1];
   var emitter = new Emitter(geojson, 2000);
 
-  var ev;
+  var ev = emitter.next();
   var num = 0;
   // Request events until the last event (indicated by `null`) is reached.
-  while (ev = emitter.next()) {
+  while (ev) {
     assert.equal(ev.coords.length, 2, 'event ' + num + ' coords');
     assert.equal(typeof ev.bearing, 'number', 'event ' + num + ' bearing');
     assert.equal(typeof ev.speed, 'number', 'event ' + num + ' speed');
@@ -100,6 +98,7 @@ test('emit.next acceldecel', function(assert) {
       assert.equal(typeof ev.speedchange, 'number', 'event ' + num + ' speedchange');
     }
     num++;
+    ev = emitter.next();
   }
   assert.deepEqual(ev, null, 'last event is null');
   assert.end();
