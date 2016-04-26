@@ -89,6 +89,7 @@ test('emit.next acceldecel', function(assert) {
 
   var ev;
   var num = 0;
+  // Request events until the last event (indicated by `null`) is reached.
   while (ev = emitter.next()) {
     assert.equal(ev.coords.length, 2, 'event ' + num + ' coords');
     assert.equal(typeof ev.bearing, 'number', 'event ' + num + ' bearing');
