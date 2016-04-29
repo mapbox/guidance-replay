@@ -81,6 +81,29 @@ test('emit.next', function(t) {
   t.end();
 });
 
+test('emit.next acceldecel', function(assert) {
+  var geojson = route(JSON.parse(JSON.stringify(require('./fixtures/garage.v5'))), { spacing: 'acceldecel' });
+  var emitter = new Emitter(geojson, 2000);
+
+  var ev = emitter.next();
+  var num = 0;
+  // Request events until the last event (indicated by `null`) is reached.
+  while (ev) {
+    assert.equal(ev.coords.length, 2, 'event ' + num + ' coords');
+    assert.equal(typeof ev.bearing, 'number', 'event ' + num + ' bearing');
+    assert.equal(typeof ev.speed, 'number', 'event ' + num + ' speed');
+    if (num === 0) {
+      assert.deepEqual(ev.speedchange, undefined, 'event ' + num + ' speedchange');
+    } else {
+      assert.equal(typeof ev.speedchange, 'number', 'event ' + num + ' speedchange');
+    }
+    num++;
+    ev = emitter.next();
+  }
+  assert.deepEqual(ev, null, 'last event is null');
+  assert.end();
+});
+
 test('speed placer', function(t) {
   var garage = JSON.parse(JSON.stringify(require('./fixtures/garage.v5')));
   var garageSteps = garage.routes[0].legs[0].steps;
