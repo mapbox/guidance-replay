@@ -182,28 +182,26 @@ test('speed placer', function(t) {
 });
 
 test('seeker', function(t) {
-  t.test('austin', function(assert) {
-    var austin = JSON.parse(JSON.stringify(require('./fixtures/austin.v5')));
-    var geojson = route(austin);
-    var step;
-    var results = [];
-    for (var i = 0; i < 2; i++) {
-      var emitter = new Emitter(geojson, 100, i);
-      for (var j = 0; j < 5; j++) {
-        step = emitter.next();
-        results.push(step);
-      }
-    }
+  var austin = JSON.parse(JSON.stringify(require('./fixtures/austin.v5')));
+  var geojson = route(austin);
+  var emitter = new Emitter(geojson, 100);
+  var results = [];
+  var stepsTaken = 10;
+  var step;
 
-    t.deepEqual((results[0].coords), route(austin).geometry.coordinates[0]);
-    t.deepEqual((results[5].coords), route(austin).geometry.coordinates[1]);
-    results.splice(5,1); // remove the starter position for the second emission event
-    for (k = 1; k < results.length; k++) {
-      t.ok(results[k].bearing > 90 && results[k].bearing < 180, 'Bearing should be between 90 and 180');
-      t.ok(results[k].coords[0] > results[k-1].coords[0], 'Longitude should be larger than previous step if bearing is between 90 and 180');
-      t.ok(results[k].coords[1] < results[k-1].coords[1], 'Latitude should be smaller than previous step if bearing is between 90 and 180');
-    }
-    assert.end();
-  });
+  for (var i = 0; i < 5; i++) {
+    step = emitter.next(stepsTaken);
+    results.push(step);
+    stepsTaken++;
+  }
+
+  t.equal(results[0].bearing, 0, 'First response should have bearing 0');
+  t.ok(results[0].coords[0] > austin.routes[0].legs[0].steps[0].geometry.coordinates[0][0], 'First response should have a greater longitude than first coordinate in route given a bearing of 172 between first two coordinates');
+  t.ok(results[0].coords[1] < austin.routes[0].legs[0].steps[0].geometry.coordinates[0][1], 'First response should have a smaller latitude than first coordinate in route given a bearing of 172 between first two coordinates');
+  for (var j = 1; j < results.length; j++) {
+    t.ok(results[j].bearing > 90 && results[j].bearing < 180, 'Bearing should be between 90 and 180');
+    t.ok(results[j].coords[0] > results[j-1].coords[0], 'Longitude should be larger than previous step if bearing is between 90 and 180');
+    t.ok(results[j].coords[1] < results[j-1].coords[1], 'Latitude should be smaller than previous step if bearing is between 90 and 180');
+  }
   t.end();
 });
