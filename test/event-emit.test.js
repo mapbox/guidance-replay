@@ -180,3 +180,30 @@ test('speed placer', function(t) {
 
   t.end();
 });
+
+test('seeker', function(t) {
+  t.test('austin', function(assert) {
+    var austin = JSON.parse(JSON.stringify(require('./fixtures/austin.v5')));
+    var geojson = route(austin);
+    var step;
+    var results = [];
+    for (var i = 0; i < 2; i++) {
+      var emitter = new Emitter(geojson, 100, i);
+      for (var j = 0; j < 5; j++) {
+        step = emitter.next();
+        results.push(step);
+      }
+    }
+
+    t.deepEqual((results[0].coords), route(austin).geometry.coordinates[0]);
+    t.deepEqual((results[5].coords), route(austin).geometry.coordinates[1]);
+    results.splice(5,1); // remove the starter position for the second emission event
+    for (k = 1; k < results.length; k++) {
+      t.ok(results[k].bearing > 90 && results[k].bearing < 180, 'Bearing should be between 90 and 180');
+      t.ok(results[k].coords[0] > results[k-1].coords[0], 'Longitude should be larger than previous step if bearing is between 90 and 180');
+      t.ok(results[k].coords[1] < results[k-1].coords[1], 'Latitude should be smaller than previous step if bearing is between 90 and 180');
+    }
+    assert.end();
+  });
+  t.end();
+});
