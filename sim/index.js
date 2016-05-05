@@ -12,7 +12,6 @@ if (!process.env.MapboxAccessToken) {
 mapboxgl.util.getJSON('rmnp.json', function(err, directions) {
   if (err) throw err;
   var route = routev5(directions, { spacing: 'acceldecel' });
-  console.log(route);
   var center = route.geometry.coordinates[0];
 
   var map = new mapboxgl.Map({
