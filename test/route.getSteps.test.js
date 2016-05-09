@@ -17,7 +17,7 @@ tape('route.getSteps v4', function(assert) {
   assert.end();
 });
 
-tape('route.getSteps v4 with multiple routes', function(assert) {
+tape('route.getSteps v4 with coordinates of different decimal place lengths', function(assert) {
   var sf = JSON.parse(JSON.stringify(require('./fixtures/sf.v4')));
   var steps = route.getSteps(sf);
   assert.deepEqual(steps.length, sf.routes[0].steps.length, 'creates 7 steps');
