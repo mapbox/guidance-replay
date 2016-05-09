@@ -180,3 +180,62 @@ test('speed placer', function(t) {
 
   t.end();
 });
+
+test('stepsTaken', function(t) {
+  var austin = JSON.parse(JSON.stringify(require('./fixtures/seek.v5')));
+  var geojson = route(austin);
+  var frequency = 100;
+  var emitter = new Emitter(geojson, frequency);
+  emitter.stepsTaken(49605);
+  var results = [];
+  var step;
+
+  for (var i = 0; i < 17; i++) {
+    step = emitter.next();
+    results.push(step);
+  }
+
+  t.ok(Math.abs(results[0].coords[0] - geojson.geometry.coordinates[6][0]) < 0.0001, 'First step longitude is within reasonable distance of 6th coordinate');
+  t.ok(Math.abs(results[0].coords[1] - geojson.geometry.coordinates[6][1]) < 0.0001, 'First step latitude is within reasonable distance of 6th coordinate');
+  t.equal(results[0].bearing, 0, 'First step should have a bearing of 0');
+  for (var j = 1; j < 16; j++) {
+    t.ok(results[j].bearing > 171 && results[j].bearing < 172, 'Bearing for each intermediate step should be between 171 and 172');
+    t.ok(results[j].coords[0] > results[j - 1].coords[0], 'Longitude should increase in size as steps increment');
+    t.ok(results[j].coords[0] > geojson.geometry.coordinates[6][0] && results[j].coords[0] < geojson.geometry.coordinates[7][0], 'Longitude shoudl be between 6th and 7th coordinates for intermediate steps');
+    t.ok(results[j].coords[1] < results[j - 1].coords[1], 'Latitude should decrease in size as steps increment');
+    t.ok(results[j].coords[1] < geojson.geometry.coordinates[6][1] && results[j].coords[1] > geojson.geometry.coordinates[7][1], 'Latitude should be between 6th and 7th coordinates for intermediate steps');
+  }
+  t.ok(results[16].coords[0] > geojson.geometry.coordinates[7][0] && results[16].coords[1] < geojson.geometry.coordinates[7][1], 'Last step should be farther along than 7th coordinate');
+  t.end();
+});
+
+test('stepsTaken', function(t) {
+  var austin = JSON.parse(JSON.stringify(require('./fixtures/seek.v5')));
+  var geojson = route(austin, { 'spacing': 'acceldecel' });
+  var frequency = 100;
+  var emitter = new Emitter(geojson, frequency);
+  emitter.stepsTaken(49605);
+  var results = [];
+  var step;
+
+  for (var i = 0; i < 17; i++) {
+    step = emitter.next();
+    t.ok(Math.abs(step.speed - 24.69945872801082) < 0.0001, 'Step speed is within reasonable threshold of expected value');
+    results.push(step);
+  }
+
+  t.ok(Math.abs(results[0].coords[0] - geojson.geometry.coordinates[6][0]) < 0.0001, 'First step longitude is within reasonable distance of 6th coordinate');
+  t.ok(Math.abs(results[0].coords[1] - geojson.geometry.coordinates[6][1]) < 0.0001, 'First step latitude is within reasonable distance of 6th coordinate');
+  t.equal(results[0].bearing, 0, 'First step should have a bearing of 0');
+  for (var j = 1; j < 16; j++) {
+    t.ok(results[j].bearing > 171 && results[j].bearing < 172, 'Bearing for each intermediate step should be between 171 and 172');
+    t.equal(results[j].speedchange, 0, 'Speed should not change in this interval');
+    t.ok(results[j].coords[0] > results[j - 1].coords[0], 'Longitude should increase in size as steps increment');
+    t.ok(results[j].coords[0] > geojson.geometry.coordinates[6][0] && results[j].coords[0] < geojson.geometry.coordinates[7][0], 'Longitude should be between 6th and 7th coordinates for intermediate steps');
+    t.ok(results[j].coords[1] < results[j - 1].coords[1], 'Latitude should decrease in size as steps increment');
+    t.ok(results[j].coords[1] < geojson.geometry.coordinates[6][1] && results[j].coords[1] > geojson.geometry.coordinates[7][1], 'Latitude should be between 6th and 7th coordinates for intermediate steps');
+  }
+  t.ok(results[16].coords[0] > geojson.geometry.coordinates[7][0] && results[16].coords[1] < geojson.geometry.coordinates[7][1], 'Last step should be farther along than 7th coordinate');
+  t.equal(results[16].speedchange, 0, 'Speed should not change in this step');
+  t.end();
+});
