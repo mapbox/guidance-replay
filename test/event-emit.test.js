@@ -181,12 +181,12 @@ test('speed placer', function(t) {
   t.end();
 });
 
-test('setTime', function(t) {
+test('stepsTaken', function(t) {
   var austin = JSON.parse(JSON.stringify(require('./fixtures/seek.v5')));
   var geojson = route(austin);
   var frequency = 100;
   var emitter = new Emitter(geojson, frequency);
-  emitter.setTime(49605);
+  emitter.stepsTaken(49605);
   var results = [];
   var step;
 
@@ -209,12 +209,12 @@ test('setTime', function(t) {
   t.end();
 });
 
-test('setTime', function(t) {
+test('stepsTaken', function(t) {
   var austin = JSON.parse(JSON.stringify(require('./fixtures/seek.v5')));
   var geojson = route(austin, { 'spacing': 'acceldecel' });
   var frequency = 100;
   var emitter = new Emitter(geojson, frequency);
-  emitter.setTime(49605);
+  emitter.stepsTaken(49605);
   var results = [];
   var step;
 
