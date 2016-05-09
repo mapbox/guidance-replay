@@ -1,0 +1,1007 @@
+{
+  "origin": {
+    "type": "Feature",
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        -122.435221,
+        37.787321
+      ]
+    },
+    "properties": {
+      "name": "Steiner Street"
+    }
+  },
+  "destination": {
+    "type": "Feature",
+    "geometry": {
+      "type": "Point",
+      "coordinates": [
+        -122.423834,
+        37.762442
+      ]
+    },
+    "properties": {
+      "name": "Guerrero Street"
+    }
+  },
+  "waypoints": [],
+  "routes": [
+    {
+      "distance": 4467,
+      "duration": 437,
+      "steps": [
+        {
+          "distance": 267,
+          "duration": 49,
+          "way_name": "Steiner Street",
+          "mode": "driving",
+          "direction": "S",
+          "heading": 172,
+          "maneuver": {
+            "instruction": "Proceed to Steiner Street, then go south",
+            "type": "depart",
+            "location": {
+              "type": "Point",
+              "coordinates": [
+                -122.435221,
+                37.787321
+              ]
+            }
+          }
+        },
+        {
+          "distance": 445,
+          "duration": 61,
+          "way_name": "Post Street",
+          "mode": "driving",
+          "direction": "W",
+          "heading": 261,
+          "maneuver": {
+            "instruction": "Turn right onto Post Street",
+            "type": "turn right",
+            "location": {
+              "type": "Point",
+              "coordinates": [
+                -122.434744,
+                37.784952
+              ]
+            }
+          }
+        },
+        {
+          "distance": 1577,
+          "duration": 102,
+          "way_name": "Divisadero Street",
+          "mode": "driving",
+          "direction": "S",
+          "heading": 171,
+          "maneuver": {
+            "instruction": "Turn left onto Divisadero Street",
+            "type": "turn left",
+            "location": {
+              "type": "Point",
+              "coordinates": [
+                -122.439743,
+                37.784319
+              ]
+            }
+          }
+        },
+        {
+          "distance": 1086,
+          "duration": 99,
+          "way_name": "Castro Street",
+          "mode": "driving",
+          "direction": "S",
+          "heading": 164,
+          "maneuver": {
+            "instruction": "Go straight onto Castro Street, Divisadero Street becomes Castro Street",
+            "type": "continue",
+            "location": {
+              "type": "Point",
+              "coordinates": [
+                -122.436872,
+                37.77034
+              ]
+            }
+          }
+        },
+        {
+          "distance": 995,
+          "duration": 117,
+          "way_name": "18th Street",
+          "mode": "driving",
+          "direction": "E",
+          "heading": 86,
+          "maneuver": {
+            "instruction": "Turn left onto 18th Street",
+            "type": "turn left",
+            "location": {
+              "type": "Point",
+              "coordinates": [
+                -122.435028,
+                37.76089
+              ]
+            }
+          }
+        },
+        {
+          "distance": 97,
+          "duration": 8,
+          "way_name": "Guerrero Street",
+          "mode": "driving",
+          "direction": "N",
+          "heading": 355,
+          "maneuver": {
+            "instruction": "Turn left onto Guerrero Street",
+            "type": "turn left",
+            "location": {
+              "type": "Point",
+              "coordinates": [
+                -122.423743,
+                37.76157
+              ]
+            }
+          }
+        },
+        {
+          "distance": 0,
+          "duration": 0,
+          "way_name": "Guerrero Street",
+          "mode": "driving",
+          "direction": "N",
+          "heading": 0,
+          "maneuver": {
+            "instruction": "You have arrived at your destination",
+            "type": "arrive",
+            "location": {
+              "type": "Point",
+              "coordinates": [
+                -122.423834,
+                37.762442
+              ]
+            }
+          }
+        }
+      ],
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -122.43522,
+            37.78732
+          ],
+          [
+            -122.43521,
+            37.78727
+          ],
+          [
+            -122.43512,
+            37.78682
+          ],
+          [
+            -122.43493,
+            37.78589
+          ],
+          [
+            -122.43474,
+            37.78495
+          ],
+          [
+            -122.43639,
+            37.78475
+          ],
+          [
+            -122.43803,
+            37.78454
+          ],
+          [
+            -122.43966,
+            37.78433
+          ],
+          [
+            -122.43974,
+            37.78432
+          ],
+          [
+            -122.43965,
+            37.78385
+          ],
+          [
+            -122.43955,
+            37.78338
+          ],
+          [
+            -122.43953,
+            37.78324
+          ],
+          [
+            -122.43951,
+            37.78315
+          ],
+          [
+            -122.43937,
+            37.78246
+          ],
+          [
+            -122.43918,
+            37.78152
+          ],
+          [
+            -122.43899,
+            37.78059
+          ],
+          [
+            -122.43881,
+            37.77966
+          ],
+          [
+            -122.43862,
+            37.77872
+          ],
+          [
+            -122.43844,
+            37.77787
+          ],
+          [
+            -122.43843,
+            37.77779
+          ],
+          [
+            -122.43841,
+            37.77772
+          ],
+          [
+            -122.43824,
+            37.77686
+          ],
+          [
+            -122.43805,
+            37.77593
+          ],
+          [
+            -122.43786,
+            37.775
+          ],
+          [
+            -122.43768,
+            37.77407
+          ],
+          [
+            -122.43757,
+            37.77354
+          ],
+          [
+            -122.43749,
+            37.77313
+          ],
+          [
+            -122.4373,
+            37.7722
+          ],
+          [
+            -122.43711,
+            37.77127
+          ],
+          [
+            -122.43694,
+            37.77041
+          ],
+          [
+            -122.43693,
+            37.77038
+          ],
+          [
+            -122.4369,
+            37.77036
+          ],
+          [
+            -122.43687,
+            37.77034
+          ],
+          [
+            -122.43686,
+            37.7703
+          ],
+          [
+            -122.43684,
+            37.77027
+          ],
+          [
+            -122.43682,
+            37.77024
+          ],
+          [
+            -122.43679,
+            37.77022
+          ],
+          [
+            -122.43675,
+            37.77019
+          ],
+          [
+            -122.4367,
+            37.77017
+          ],
+          [
+            -122.43657,
+            37.7701
+          ],
+          [
+            -122.43651,
+            37.77007
+          ],
+          [
+            -122.43646,
+            37.77003
+          ],
+          [
+            -122.43641,
+            37.76999
+          ],
+          [
+            -122.43636,
+            37.76994
+          ],
+          [
+            -122.43631,
+            37.76988
+          ],
+          [
+            -122.43623,
+            37.76976
+          ],
+          [
+            -122.43616,
+            37.76966
+          ],
+          [
+            -122.4361,
+            37.76958
+          ],
+          [
+            -122.43605,
+            37.7695
+          ],
+          [
+            -122.436,
+            37.76942
+          ],
+          [
+            -122.43596,
+            37.76935
+          ],
+          [
+            -122.4359,
+            37.76925
+          ],
+          [
+            -122.43585,
+            37.76915
+          ],
+          [
+            -122.43583,
+            37.7691
+          ],
+          [
+            -122.43582,
+            37.76906
+          ],
+          [
+            -122.43581,
+            37.76902
+          ],
+          [
+            -122.43581,
+            37.76898
+          ],
+          [
+            -122.43578,
+            37.76869
+          ],
+          [
+            -122.43574,
+            37.7683
+          ],
+          [
+            -122.43574,
+            37.76827
+          ],
+          [
+            -122.43565,
+            37.76734
+          ],
+          [
+            -122.43557,
+            37.76654
+          ],
+          [
+            -122.43549,
+            37.76574
+          ],
+          [
+            -122.43542,
+            37.76498
+          ],
+          [
+            -122.43534,
+            37.76413
+          ],
+          [
+            -122.43528,
+            37.76347
+          ],
+          [
+            -122.43522,
+            37.76284
+          ],
+          [
+            -122.4352,
+            37.76271
+          ],
+          [
+            -122.43519,
+            37.7626
+          ],
+          [
+            -122.43517,
+            37.76241
+          ],
+          [
+            -122.43503,
+            37.76089
+          ],
+          [
+            -122.4339,
+            37.76096
+          ],
+          [
+            -122.43279,
+            37.76103
+          ],
+          [
+            -122.43057,
+            37.76116
+          ],
+          [
+            -122.4285,
+            37.76127
+          ],
+          [
+            -122.42839,
+            37.76128
+          ],
+          [
+            -122.42835,
+            37.76128
+          ],
+          [
+            -122.4283,
+            37.76129
+          ],
+          [
+            -122.42823,
+            37.7613
+          ],
+          [
+            -122.42762,
+            37.76134
+          ],
+          [
+            -122.42725,
+            37.76136
+          ],
+          [
+            -122.42627,
+            37.76142
+          ],
+          [
+            -122.42617,
+            37.76142
+          ],
+          [
+            -122.42602,
+            37.76143
+          ],
+          [
+            -122.42503,
+            37.76149
+          ],
+          [
+            -122.42384,
+            37.76156
+          ],
+          [
+            -122.42374,
+            37.76157
+          ],
+          [
+            -122.42383,
+            37.76244
+          ]
+        ]
+      },
+      "summary": "Castro Street, 18th Street"
+    },
+    {
+      "distance": 4434,
+      "duration": 473,
+      "steps": [
+        {
+          "distance": 897,
+          "duration": 130,
+          "way_name": "Steiner Street",
+          "mode": "driving",
+          "direction": "S",
+          "heading": 172,
+          "maneuver": {
+            "instruction": "Proceed to Steiner Street, then go south",
+            "type": "depart",
+            "location": {
+              "type": "Point",
+              "coordinates": [
+                -122.435221,
+                37.787321
+              ]
+            }
+          }
+        },
+        {
+          "distance": 878,
+          "duration": 80,
+          "way_name": "Golden Gate Avenue",
+          "mode": "driving",
+          "direction": "E",
+          "heading": 81,
+          "maneuver": {
+            "instruction": "Turn left onto Golden Gate Avenue",
+            "type": "turn left",
+            "location": {
+              "type": "Point",
+              "coordinates": [
+                -122.433613,
+                37.779359
+              ]
+            }
+          }
+        },
+        {
+          "distance": 840,
+          "duration": 83,
+          "way_name": "Gough Street",
+          "mode": "driving",
+          "direction": "S",
+          "heading": 171,
+          "maneuver": {
+            "instruction": "Turn right onto Gough Street",
+            "type": "turn right",
+            "location": {
+              "type": "Point",
+              "coordinates": [
+                -122.423748,
+                37.780614
+              ]
+            }
+          }
+        },
+        {
+          "distance": 228,
+          "duration": 17,
+          "way_name": "Gough Street",
+          "mode": "driving",
+          "direction": "E",
+          "heading": 102,
+          "maneuver": {
+            "instruction": "Continue left onto Gough Street",
+            "type": "turn left",
+            "location": {
+              "type": "Point",
+              "coordinates": [
+                -122.422228,
+                37.773159
+              ]
+            }
+          }
+        },
+        {
+          "distance": 152,
+          "duration": 10,
+          "way_name": "Otis Street",
+          "mode": "driving",
+          "direction": "S",
+          "heading": 165,
+          "maneuver": {
+            "instruction": "Follow a slight right onto Otis Street, Gough Street becomes Otis Street",
+            "type": "bear right",
+            "location": {
+              "type": "Point",
+              "coordinates": [
+                -122.420351,
+                37.771764
+              ]
+            }
+          }
+        },
+        {
+          "distance": 956,
+          "duration": 92,
+          "way_name": "Mission Street",
+          "mode": "driving",
+          "direction": "S",
+          "heading": 178,
+          "maneuver": {
+            "instruction": "Go straight onto Mission Street, Otis Street becomes Mission Street",
+            "type": "continue",
+            "location": {
+              "type": "Point",
+              "coordinates": [
+                -122.420197,
+                37.770403
+              ]
+            }
+          }
+        },
+        {
+          "distance": 385,
+          "duration": 52,
+          "way_name": "18th Street",
+          "mode": "driving",
+          "direction": "W",
+          "heading": 266,
+          "maneuver": {
+            "instruction": "Turn right onto 18th Street",
+            "type": "turn right",
+            "location": {
+              "type": "Point",
+              "coordinates": [
+                -122.419381,
+                37.761834
+              ]
+            }
+          }
+        },
+        {
+          "distance": 97,
+          "duration": 8,
+          "way_name": "Guerrero Street",
+          "mode": "driving",
+          "direction": "N",
+          "heading": 355,
+          "maneuver": {
+            "instruction": "Turn right onto Guerrero Street",
+            "type": "turn right",
+            "location": {
+              "type": "Point",
+              "coordinates": [
+                -122.423743,
+                37.76157
+              ]
+            }
+          }
+        },
+        {
+          "distance": 0,
+          "duration": 0,
+          "way_name": "Guerrero Street",
+          "mode": "driving",
+          "direction": "N",
+          "heading": 0,
+          "maneuver": {
+            "instruction": "You have arrived at your destination",
+            "type": "arrive",
+            "location": {
+              "type": "Point",
+              "coordinates": [
+                -122.423834,
+                37.762442
+              ]
+            }
+          }
+        }
+      ],
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -122.43522,
+            37.78732
+          ],
+          [
+            -122.43521,
+            37.78727
+          ],
+          [
+            -122.43512,
+            37.78682
+          ],
+          [
+            -122.43493,
+            37.78589
+          ],
+          [
+            -122.43474,
+            37.78495
+          ],
+          [
+            -122.43461,
+            37.7843
+          ],
+          [
+            -122.4346,
+            37.78421
+          ],
+          [
+            -122.43457,
+            37.7841
+          ],
+          [
+            -122.43455,
+            37.784
+          ],
+          [
+            -122.43437,
+            37.78308
+          ],
+          [
+            -122.43418,
+            37.78215
+          ],
+          [
+            -122.43399,
+            37.78123
+          ],
+          [
+            -122.4338,
+            37.78029
+          ],
+          [
+            -122.43361,
+            37.77936
+          ],
+          [
+            -122.43197,
+            37.77957
+          ],
+          [
+            -122.43032,
+            37.77978
+          ],
+          [
+            -122.43018,
+            37.7798
+          ],
+          [
+            -122.42868,
+            37.77999
+          ],
+          [
+            -122.42848,
+            37.78001
+          ],
+          [
+            -122.42704,
+            37.7802
+          ],
+          [
+            -122.42538,
+            37.78041
+          ],
+          [
+            -122.42375,
+            37.78061
+          ],
+          [
+            -122.42356,
+            37.77968
+          ],
+          [
+            -122.42347,
+            37.77922
+          ],
+          [
+            -122.42337,
+            37.77875
+          ],
+          [
+            -122.42318,
+            37.77782
+          ],
+          [
+            -122.42309,
+            37.77736
+          ],
+          [
+            -122.423,
+            37.77689
+          ],
+          [
+            -122.4229,
+            37.77642
+          ],
+          [
+            -122.42281,
+            37.77596
+          ],
+          [
+            -122.42272,
+            37.7755
+          ],
+          [
+            -122.42262,
+            37.77502
+          ],
+          [
+            -122.42253,
+            37.77456
+          ],
+          [
+            -122.42243,
+            37.77409
+          ],
+          [
+            -122.42234,
+            37.77363
+          ],
+          [
+            -122.42226,
+            37.77324
+          ],
+          [
+            -122.42223,
+            37.77316
+          ],
+          [
+            -122.42214,
+            37.77315
+          ],
+          [
+            -122.42206,
+            37.77308
+          ],
+          [
+            -122.4219,
+            37.77294
+          ],
+          [
+            -122.42149,
+            37.77262
+          ],
+          [
+            -122.4208,
+            37.77206
+          ],
+          [
+            -122.42051,
+            37.77183
+          ],
+          [
+            -122.42035,
+            37.77176
+          ],
+          [
+            -122.42031,
+            37.77165
+          ],
+          [
+            -122.42028,
+            37.77154
+          ],
+          [
+            -122.42023,
+            37.77082
+          ],
+          [
+            -122.4202,
+            37.7704
+          ],
+          [
+            -122.42019,
+            37.77029
+          ],
+          [
+            -122.42019,
+            37.77029
+          ],
+          [
+            -122.42018,
+            37.77015
+          ],
+          [
+            -122.42018,
+            37.77
+          ],
+          [
+            -122.42013,
+            37.76933
+          ],
+          [
+            -122.42007,
+            37.76905
+          ],
+          [
+            -122.42,
+            37.76828
+          ],
+          [
+            -122.41984,
+            37.76667
+          ],
+          [
+            -122.41973,
+            37.76548
+          ],
+          [
+            -122.4197,
+            37.76516
+          ],
+          [
+            -122.41969,
+            37.76505
+          ],
+          [
+            -122.41968,
+            37.76497
+          ],
+          [
+            -122.41954,
+            37.76352
+          ],
+          [
+            -122.41953,
+            37.76344
+          ],
+          [
+            -122.41953,
+            37.76336
+          ],
+          [
+            -122.4195,
+            37.76305
+          ],
+          [
+            -122.41947,
+            37.76271
+          ],
+          [
+            -122.41938,
+            37.76183
+          ],
+          [
+            -122.42013,
+            37.76179
+          ],
+          [
+            -122.42081,
+            37.76175
+          ],
+          [
+            -122.42158,
+            37.7617
+          ],
+          [
+            -122.42242,
+            37.76165
+          ],
+          [
+            -122.42278,
+            37.76163
+          ],
+          [
+            -122.42296,
+            37.76162
+          ],
+          [
+            -122.42374,
+            37.76157
+          ],
+          [
+            -122.42383,
+            37.76244
+          ]
+        ]
+      },
+      "summary": "Steiner Street, Gough Street"
+    }
+  ]
+}
