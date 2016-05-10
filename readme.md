@@ -38,6 +38,33 @@ Turn a Mapbox Directions API response into timestamped GeoJSON in the format of 
 
 Returns **[Object](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)** GeoJSON LineString with coordinateProperties.times timestamps in milliseconds for each coordinate in the input geometry, starting at 0 ms.
 
+### Locator
+
+Generate the location of an event, in terms of step number or coordinates, given any time along the route in milliseconds.
+
+**Parameters**
+
+-   `directions` **[Object](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)** Response from Mapbox Directions API.
+
+#### Locator.step
+
+Find the current [Mapbox Directions API step](https://www.mapbox.com/api-documentation/#retrieve-directions) given a time along the route.
+
+**Parameters**
+
+-   `time` **[Number](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number)** Time along the route in milliseconds.
+
+Returns **[Number](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number)** Step along the route.
+
+#### Locator.coords
+
+Find the current coordinates given a time along the route.
+
+**Parameters**
+
+-   `time` **[Number](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number)** Time along the route in milliseconds.
+
+Returns **[Object](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)** Point feature with at locaiton corresponding to time input.
 
 ## Development
 

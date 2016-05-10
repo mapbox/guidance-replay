@@ -1,12 +1,11 @@
 {
-  "code": "Ok",
   "routes": [
     {
       "geometry": {
         "coordinates": [
           [
             -122.435224,
-            37.787321
+            37.78732
           ],
           [
             -122.431375,
@@ -21,7 +20,7 @@
             37.761568
           ],
           [
-            -122.423832,
+            -122.423831,
             37.762443
           ]
         ],
@@ -29,14 +28,15 @@
       },
       "legs": [
         {
-          "duration": 567.7,
+          "summary": "Sanchez St, 18th St",
+          "duration": 567.2,
           "steps": [
             {
               "geometry": {
                 "coordinates": [
                   [
                     -122.435224,
-                    37.787321
+                    37.78732
                   ],
                   [
                     -122.435218,
@@ -183,16 +183,15 @@
                 "bearing_before": 0,
                 "location": [
                   -122.435224,
-                  37.787321
+                  37.78732
                 ],
-                "modifier": "right",
                 "type": "depart",
-                "instruction": "Head right on Steiner St"
+                "instruction": "Proceed to Steiner St, then go south"
               },
               "mode": "driving",
               "duration": 295.6,
               "name": "Steiner St",
-              "distance": 2028.1
+              "distance": 2028
             },
             {
               "geometry": {
@@ -386,7 +385,7 @@
                     37.76235
                   ],
                   [
-                    -122.423832,
+                    -122.423831,
                     37.762443
                   ]
                 ],
@@ -404,7 +403,7 @@
                 "instruction": "Turn left onto Guerrero St"
               },
               "mode": "driving",
-              "duration": 13,
+              "duration": 12.5,
               "name": "Guerrero St",
               "distance": 97.6
             },
@@ -412,22 +411,21 @@
               "geometry": {
                 "coordinates": [
                   [
-                    -122.423832,
+                    -122.423831,
                     37.762443
                   ]
                 ],
-                "type": "LineString"
+                "type": "Point"
               },
               "maneuver": {
                 "bearing_after": 0,
-                "bearing_before": 356,
+                "bearing_before": 357,
                 "location": [
-                  -122.423832,
+                  -122.423831,
                   37.762443
                 ],
-                "modifier": "right",
                 "type": "arrive",
-                "instruction": "You have arrived at your final destination, on the right"
+                "instruction": "You have arrived at your destination"
               },
               "mode": "driving",
               "duration": 0,
@@ -435,11 +433,11 @@
               "distance": 0
             }
           ],
-          "distance": 3654.4
+          "distance": 3654.2
         }
       ],
-      "duration": 567.7,
-      "distance": 3654.4
+      "duration": 567.2,
+      "distance": 3654.2
     }
   ],
   "waypoints": [
@@ -447,15 +445,16 @@
       "name": "Steiner St",
       "location": [
         -122.435224,
-        37.787321
+        37.78732
       ]
     },
     {
       "name": "Guerrero St",
       "location": [
-        -122.423832,
+        -122.423831,
         37.762443
       ]
     }
-  ]
+  ],
+  "code": "Ok"
 }

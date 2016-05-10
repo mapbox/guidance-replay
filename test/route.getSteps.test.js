@@ -4,7 +4,7 @@ var route = require('../lib/route');
 tape('route.getSteps v4', function(assert) {
   var garage = JSON.parse(JSON.stringify(require('./fixtures/garage.v4')));
   var steps = route.getSteps(garage);
-  assert.deepEqual(steps.length, 4, 'creates 4 steps');
+  assert.deepEqual(steps.length, 3, 'creates 3 steps');
   // Don't consider the last "arrival" step
   garage.routes[0].steps.slice(0,-1).forEach(function(step, i) {
     assert.deepEqual(steps[i].distance, step.distance, 'step ' + i + ' distance = ' + steps[i].distance);

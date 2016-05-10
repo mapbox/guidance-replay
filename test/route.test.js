@@ -44,13 +44,14 @@ test('route', function(t) {
     var garage = JSON.parse(JSON.stringify(require('./fixtures/garage.v4')));
     var geojson = route(garage);
     assert.deepEqual(geojson.geometry.coordinates, [
-      [ -77.032394, 38.912609 ],
-      [ -77.0326, 38.912608 ],
-      [ -77.03267, 38.912608 ],
-      [ -77.032674, 38.913151 ],
-      [ -77.032669, 38.913356 ]
+      [ -77.03239,38.91261 ],
+      [ -77.0326,38.91261 ],
+      [ -77.03267,38.91261 ],
+      [ -77.03267,38.91263 ],
+      [ -77.03267,38.91315 ],
+      [ -77.03267,38.91336 ]
     ]);
-    assert.deepEqual(geojson.properties.coordinateProperties.times, [ 0, 16420, 22000, 29000, 32000 ]);
+    assert.deepEqual(geojson.properties.coordinateProperties.times, [ 0, 14250, 19000, 19267, 26200, 29000 ]);
     assert.end();
   });
 
@@ -83,11 +84,11 @@ test('route', function(t) {
 
     var expectedCoords = [
       [-105.584646,40.365773],
-      [-105.58468319892053,40.365782423763264], // additional step
+      [-105.58469809129294,40.365786196508246], // additional step
       [-105.584871,40.36583],
       [-105.585075,40.365892] // final coordinates of the step
     ];
-    var expectedTimes = [ 43890, 44440, 46341, 48451 ];
+    var expectedTimes = [ 41791, 42525, 44245, 46318 ];
  
     var firstStep = interpolateAccelDecel(firstThree, 5)[0];
     assert.deepEqual(firstStep.geometry.coordinates.splice(-4), expectedCoords);
@@ -99,7 +100,7 @@ test('route', function(t) {
     var coords = geojson.geometry.coordinates.slice(0);
     var times = geojson.properties.coordinateProperties.times.slice(0);
     for (var i = 0; i < times.length; i++) {
-      if (times[i] > 43000 && times[i] < 48500) {
+      if (times[i] > 41000 && times[i] < 47000) {
         c.push(coords[i]);
         t.push(times[i]);
       }
@@ -113,12 +114,12 @@ test('route', function(t) {
     var waypoints = JSON.parse(JSON.stringify(require('./fixtures/waypoints.v5')));
     var geojson = route(waypoints);
     assert.deepEqual(geojson.geometry.coordinates, [
-      [ -122.414709,37.802627 ],
+      [ -122.414708,37.802627 ],
       [ -122.414707,37.802617 ],
       [ -122.414518,37.801697 ],
       [ -122.414419,37.801234 ],
       [ -122.414324,37.800766 ],
-      [ -122.414321,37.800755 ],
+      [ -122.414321,37.800754 ],
       [ -122.414241,37.800356 ],
       [ -122.414231,37.8003 ],
       [ -122.414129,37.799836 ],
