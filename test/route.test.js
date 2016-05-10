@@ -83,11 +83,11 @@ test('route', function(t) {
 
     var expectedCoords = [
       [-105.584646,40.365773],
-      [-105.58468319892053,40.365782423763264], // additional step
+      [-105.58469809129294,40.365786196508246], // additional step
       [-105.584871,40.36583],
       [-105.585075,40.365892] // final coordinates of the step
     ];
-    var expectedTimes = [ 43890, 44440, 46341, 48451 ];
+    var expectedTimes = [ 41791, 42525, 44245, 46318 ];
  
     var firstStep = interpolateAccelDecel(firstThree, 5)[0];
     assert.deepEqual(firstStep.geometry.coordinates.splice(-4), expectedCoords);
@@ -99,7 +99,7 @@ test('route', function(t) {
     var coords = geojson.geometry.coordinates.slice(0);
     var times = geojson.properties.coordinateProperties.times.slice(0);
     for (var i = 0; i < times.length; i++) {
-      if (times[i] > 43000 && times[i] < 48500) {
+      if (times[i] > 41000 && times[i] < 47000) {
         c.push(coords[i]);
         t.push(times[i]);
       }
