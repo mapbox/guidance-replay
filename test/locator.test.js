@@ -1,38 +1,38 @@
 var Locator = require('../lib/locator');
 var test = require('tape');
 
-// test('step v4', function (assert) {
-//   var geojson = JSON.parse(JSON.stringify(require('./fixtures/rmnp.v4.json')));
-//   var locator = new Locator(geojson);
-//   assert.equal(locator.step(0), 0, 'Time 0 should correspond to step 0');
-//   assert.equal(locator.step(4999), 0, 'Time 24000 should correspond to step 0');
-//   assert.equal(locator.step(5000), 1, 'Time 25000 should correspond to step 1');
-//   assert.equal(locator.step(5001), 1, 'Time 26000 should correspond to step 1');
-//   assert.equal(locator.step(46999), 1, 'Time 66000 should correspond to step 1');
-//   assert.equal(locator.step(47000), 2, 'Time 67000 should correspond to step 2');
-//   assert.equal(locator.step(47001), 2, 'Time 68000 should correspond to step 2');
-//   assert.equal(locator.step(196999), 2, 'Time 216000 should correspond to step 3');
-//   assert.equal(locator.step(197000), 3, 'Time 216000 should correspond to step 3');
-//   assert.equal(locator.step(197001), 3, 'Time 216000 should correspond to step 3');
-//   assert.equal(locator.step(242999), 3, 'Time 216000 should correspond to step 3');
-//   assert.equal(locator.step(243000), 4, 'Time 216000 should correspond to step 3');
-//   assert.end();
-// });
+test('step v4', function (assert) {
+  var geojson = JSON.parse(JSON.stringify(require('./fixtures/rmnp.v4.json')));
+  var locator = new Locator(geojson);
+  assert.equal(locator.step(0), 0, 'Time 0 should correspond to step 0');
+  assert.equal(locator.step(4999), 0, 'Time 24000 should correspond to step 0');
+  assert.equal(locator.step(5000), 1, 'Time 25000 should correspond to step 1');
+  assert.equal(locator.step(5001), 1, 'Time 26000 should correspond to step 1');
+  assert.equal(locator.step(46999), 1, 'Time 66000 should correspond to step 1');
+  assert.equal(locator.step(47000), 2, 'Time 67000 should correspond to step 2');
+  assert.equal(locator.step(47001), 2, 'Time 68000 should correspond to step 2');
+  assert.equal(locator.step(196999), 2, 'Time 216000 should correspond to step 3');
+  assert.equal(locator.step(197000), 3, 'Time 216000 should correspond to step 3');
+  assert.equal(locator.step(197001), 3, 'Time 216000 should correspond to step 3');
+  assert.equal(locator.step(242999), 3, 'Time 216000 should correspond to step 3');
+  assert.equal(locator.step(243000), 4, 'Time 216000 should correspond to step 3');
+  assert.end();
+});
 
-// test('step v5', function (assert) {
-//   var geojson = JSON.parse(JSON.stringify(require('./fixtures/rmnp.v5.json')));
-//   var locator = new Locator(geojson);
-//   assert.equal(locator.step(0), 0, 'Time 0 should correspond to step 0');
-//   assert.equal(locator.step(47899), 0, 'Time 46800 should correspond to step 0');
-//   assert.equal(locator.step(47900), 1, 'Time 47800 should correspond to step 1');
-//   assert.equal(locator.step(47901), 1, 'Time 48800 should correspond to step 1');
-//   assert.equal(locator.step(220699), 1, 'Time 219700 should correspond to step 1');
-//   assert.equal(locator.step(220700), 2, 'Time 220700 should correspond to step 2');
-//   assert.equal(locator.step(220701), 2, 'Time 230700 should correspond to step 2');
-//   assert.equal(locator.step(257399), 2, 'Time 230700 should correspond to step 2'); 
-//   assert.equal(locator.step(257400), 3, 'Time 257500 should correspond to step 3');
-//   assert.end();
-// });
+test('step v5', function (assert) {
+  var geojson = JSON.parse(JSON.stringify(require('./fixtures/rmnp.v5.json')));
+  var locator = new Locator(geojson);
+  assert.equal(locator.step(0), 0, 'Time 0 should correspond to step 0');
+  assert.equal(locator.step(47899), 0, 'Time 46800 should correspond to step 0');
+  assert.equal(locator.step(47900), 1, 'Time 47800 should correspond to step 1');
+  assert.equal(locator.step(47901), 1, 'Time 48800 should correspond to step 1');
+  assert.equal(locator.step(220699), 1, 'Time 219700 should correspond to step 1');
+  assert.equal(locator.step(220700), 2, 'Time 220700 should correspond to step 2');
+  assert.equal(locator.step(220701), 2, 'Time 230700 should correspond to step 2');
+  assert.equal(locator.step(257399), 2, 'Time 230700 should correspond to step 2');
+  assert.equal(locator.step(257400), 3, 'Time 257500 should correspond to step 3');
+  assert.end();
+});
 
 test('coords v4', function (assert) {
   var geojson = JSON.parse(JSON.stringify(require('./fixtures/rmnp.v4.json')));

@@ -44,13 +44,14 @@ test('route', function(t) {
     var garage = JSON.parse(JSON.stringify(require('./fixtures/garage.v4')));
     var geojson = route(garage);
     assert.deepEqual(geojson.geometry.coordinates, [
-      [ -77.032394, 38.912609 ],
-      [ -77.0326, 38.912608 ],
-      [ -77.03267, 38.912608 ],
-      [ -77.032674, 38.913151 ],
-      [ -77.032669, 38.913356 ]
+      [ -77.03239,38.91261 ],
+      [ -77.0326,38.91261 ],
+      [ -77.03267,38.91261 ],
+      [ -77.03267,38.91263 ],
+      [ -77.03267,38.91315 ],
+      [ -77.03267,38.91336 ]
     ]);
-    assert.deepEqual(geojson.properties.coordinateProperties.times, [ 0, 16420, 22000, 29000, 32000 ]);
+    assert.deepEqual(geojson.properties.coordinateProperties.times, [ 0, 14250, 19000, 19267, 26200, 29000 ]);
     assert.end();
   });
 
@@ -113,12 +114,12 @@ test('route', function(t) {
     var waypoints = JSON.parse(JSON.stringify(require('./fixtures/waypoints.v5')));
     var geojson = route(waypoints);
     assert.deepEqual(geojson.geometry.coordinates, [
-      [ -122.414709,37.802627 ],
+      [ -122.414708,37.802627 ],
       [ -122.414707,37.802617 ],
       [ -122.414518,37.801697 ],
       [ -122.414419,37.801234 ],
       [ -122.414324,37.800766 ],
-      [ -122.414321,37.800755 ],
+      [ -122.414321,37.800754 ],
       [ -122.414241,37.800356 ],
       [ -122.414231,37.8003 ],
       [ -122.414129,37.799836 ],

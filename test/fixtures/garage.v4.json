@@ -4,8 +4,8 @@
     "geometry": {
       "type": "Point",
       "coordinates": [
-        -77.03239440917969,
-        38.9126091003418
+        -77.032394,
+        38.912607
       ]
     },
     "properties": {
@@ -17,8 +17,8 @@
     "geometry": {
       "type": "Point",
       "coordinates": [
-        -77.03266906738281,
-        38.91335678100586
+        -77.032673,
+        38.913355
       ]
     },
     "properties": {
@@ -29,55 +29,36 @@
   "routes": [
     {
       "distance": 107,
-      "duration": 29,
-      "summary": "R Street Northwest",
-      "geometry": {
-        "type": "LineString",
-        "coordinates": [
-          [
-            -77.032394,
-            38.912609
-          ],
-          [
-            -77.0326,
-            38.912608
-          ],
-          [
-            -77.03267,
-            38.912608
-          ],
-          [
-            -77.032674,
-            38.913151
-          ],
-          [
-            -77.032669,
-            38.913356
-          ]
-        ]
-      },
+      "duration": 28,
       "steps": [
         {
+          "distance": 24,
+          "duration": 19,
+          "way_name": "R Street Northwest",
+          "mode": "driving",
+          "direction": "W",
+          "heading": 270,
           "maneuver": {
+            "instruction": "Proceed to R Street Northwest, then go west",
             "type": "depart",
             "location": {
               "type": "Point",
               "coordinates": [
                 -77.032394,
-                38.912609
+                38.912607
               ]
-            },
-            "instruction": "Head west on R Street Northwest"
-          },
-          "distance": 24,
-          "duration": 22,
-          "way_name": "R Street Northwest",
-          "direction": "W",
-          "heading": 270,
-          "mode": "driving"
+            }
+          }
         },
         {
+          "distance": 83,
+          "duration": 10,
+          "way_name": "",
+          "mode": "driving",
+          "direction": "N",
+          "heading": 0,
           "maneuver": {
+            "instruction": "Turn right",
             "type": "turn right",
             "location": {
               "type": "Point",
@@ -85,49 +66,59 @@
                 -77.03267,
                 38.912608
               ]
-            },
-            "instruction": "Turn right"
-          },
-          "distance": 60,
-          "duration": 7,
-          "way_name": "",
-          "direction": "N",
-          "heading": 0,
-          "mode": "driving"
+            }
+          }
         },
         {
-          "maneuver": {
-            "type": "continue",
-            "location": {
-              "type": "Point",
-              "coordinates": [
-                -77.032674,
-                38.913151
-              ]
-            },
-            "instruction": "Continue"
-          },
-          "distance": 23,
-          "duration": 3,
+          "distance": 0,
+          "duration": 0,
           "way_name": "",
+          "mode": "driving",
           "direction": "N",
           "heading": 0,
-          "mode": "driving"
-        },
-        {
           "maneuver": {
+            "instruction": "You have arrived at your destination",
             "type": "arrive",
             "location": {
               "type": "Point",
               "coordinates": [
-                -77.032669,
-                38.913356
+                -77.032673,
+                38.913355
               ]
-            },
-            "instruction": "You have arrived at your destination"
+            }
           }
         }
-      ]
+      ],
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            -77.03239,
+            38.91261
+          ],
+          [
+            -77.0326,
+            38.91261
+          ],
+          [
+            -77.03267,
+            38.91261
+          ],
+          [
+            -77.03267,
+            38.91263
+          ],
+          [
+            -77.03267,
+            38.91315
+          ],
+          [
+            -77.03267,
+            38.91336
+          ]
+        ]
+      },
+      "summary": ""
     }
   ]
 }

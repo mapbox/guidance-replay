@@ -186,7 +186,7 @@ test('stepsTaken', function(t) {
   var geojson = route(austin);
   var frequency = 100;
   var emitter = new Emitter(geojson, frequency);
-  emitter.stepsTaken(49605);
+  emitter.stepsTaken(49591);
   var results = [];
   var step;
 
@@ -214,13 +214,13 @@ test('stepsTaken', function(t) {
   var geojson = route(austin, { 'spacing': 'acceldecel' });
   var frequency = 100;
   var emitter = new Emitter(geojson, frequency);
-  emitter.stepsTaken(49605);
+  emitter.stepsTaken(49591);
   var results = [];
   var step;
 
   for (var i = 0; i < 17; i++) {
     step = emitter.next();
-    t.ok(Math.abs(step.speed - 24.69945872801082) < 0.0001, 'Step speed is within reasonable threshold of expected value');
+    t.ok(Math.abs(step.speed - 24.69824086603518) < 0.0001, 'Step speed is within reasonable threshold of expected value');
     results.push(step);
   }
 
