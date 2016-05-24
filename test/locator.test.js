@@ -34,6 +34,21 @@ test('step v5', function (assert) {
   assert.end();
 });
 
+test('step v5 in accdeldecel mode', function (assert) {
+  var geojson = JSON.parse(JSON.stringify(require('./fixtures/rmnp.v5.json')));
+  var locator = new Locator(geojson, {'spacing': 'acceldecel'});
+  assert.equal(locator.step(0), 0, 'Time 0 should correspond to step 0');
+  assert.equal(locator.step(46317), 0, 'Time 46800 should correspond to step 0');
+  assert.equal(locator.step(46318), 1, 'Time 47800 should correspond to step 1');
+  assert.equal(locator.step(46319), 1, 'Time 48800 should correspond to step 1');
+  assert.equal(locator.step(219140), 1, 'Time 219700 should correspond to step 1');
+  assert.equal(locator.step(219141), 2, 'Time 220700 should correspond to step 2');
+  assert.equal(locator.step(219142), 2, 'Time 230700 should correspond to step 2');
+  assert.equal(locator.step(259743), 2, 'Time 230700 should correspond to step 2');
+  assert.equal(locator.step(259744), 3, 'Time 257500 should correspond to step 3');
+  assert.end();
+});
+
 test('coords v4', function (assert) {
   var geojson = JSON.parse(JSON.stringify(require('./fixtures/rmnp.v4.json')));
   var locator = new Locator(geojson);
@@ -95,5 +110,34 @@ test('coords v5', function (assert) {
             locator.coords(257399).geometry.coordinates[1] < step2lat && locator.coords(257399).geometry.coordinates[1] > step3lat, 'Time 257399 coordinates should fall into step 2');
   assert.ok(Math.abs(locator.coords(257400).geometry.coordinates[0] - step3lon) < 0.00001 &&
             Math.abs(locator.coords(257400).geometry.coordinates[1] - step3lat) < 0.00001, 'Time 257400 coordinates should correspond to 3rd coordinates');
+  assert.end();
+});
+
+test('coords v5 in acceldecel mode', function (assert) {
+  var geojson = JSON.parse(JSON.stringify(require('./fixtures/rmnp.v5.json')));
+  var locator = new Locator(geojson, {'spacing': 'acceldecel'});
+  var step0lon = geojson.routes[0].legs[0].steps[0].maneuver.location[0];
+  var step0lat = geojson.routes[0].legs[0].steps[0].maneuver.location[1];
+  var step1lon = geojson.routes[0].legs[0].steps[1].maneuver.location[0];
+  var step1lat = geojson.routes[0].legs[0].steps[1].maneuver.location[1];
+  var step2lon = geojson.routes[0].legs[0].steps[2].maneuver.location[0];
+  var step2lat = geojson.routes[0].legs[0].steps[2].maneuver.location[1];
+  var step3lon = geojson.routes[0].legs[0].steps[3].maneuver.location[0];
+  var step3lat = geojson.routes[0].legs[0].steps[3].maneuver.location[1];
+
+  assert.ok(Math.abs(locator.coords(0).geometry.coordinates[0] - step0lon) < 0.00001 &&
+            Math.abs(locator.coords(0).geometry.coordinates[1] - step0lat) < 0.00001, 'Time 0 coordinates should correspond to 0th coordinates');
+  assert.ok(locator.coords(46317).geometry.coordinates[0] < step0lon && locator.coords(46317).geometry.coordinates[0] > step1lon &&
+            locator.coords(46317).geometry.coordinates[1] < step0lat && locator.coords(46317).geometry.coordinates[1] > step1lat, 'Time 46317 coordinates should fall into step 0');
+  assert.ok(Math.abs(locator.coords(46318).geometry.coordinates[0] - step1lon) < 0.00001 &&
+            Math.abs(locator.coords(46318).geometry.coordinates[1] - step1lat) < 0.00001, 'Time 46318 should correspond to 1st coordinates');
+  assert.ok(locator.coords(219140).geometry.coordinates[0] < step1lon && locator.coords(219140).geometry.coordinates[0] > step2lon &&
+            locator.coords(219140).geometry.coordinates[1] < step1lat && locator.coords(219140).geometry.coordinates[1] > step2lat, 'Time 219140 coordinates should fall into step 1');
+  assert.ok(Math.abs(locator.coords(219141).geometry.coordinates[0] - step2lon) < 0.00001 &&
+            Math.abs(locator.coords(219141).geometry.coordinates[1] - step2lat) < 0.00001, 'Time 219141 coordinates should correspond to 2nd coordinates');
+  assert.ok(locator.coords(259743).geometry.coordinates[0] < step2lon && locator.coords(259743).geometry.coordinates[0] > step3lon &&
+            locator.coords(259743).geometry.coordinates[1] < step2lat && locator.coords(259743).geometry.coordinates[1] > step3lat, 'Time 259743 coordinates should fall into step 2');
+  assert.ok(Math.abs(locator.coords(259744).geometry.coordinates[0] - step3lon) < 0.00001 &&
+            Math.abs(locator.coords(259744).geometry.coordinates[1] - step3lat) < 0.00001, 'Time 259744 coordinates should correspond to 3rd coordinates');
   assert.end();
 });
