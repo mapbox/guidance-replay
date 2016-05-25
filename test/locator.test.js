@@ -21,7 +21,7 @@ test('maneuvers v4', function (assert) {
     assert.ok(Math.abs(timesExpected[i] - times[i]) < 0.00001, 'Time should fall within reasonable threshold of expected');
     assert.ok(Math.abs(coordinatesExpected[i][0] - coordinates[i][0]) < 0.00001, 'Latitude should fall within reasonable treshold of expected');
     assert.ok(Math.abs(coordinatesExpected[i][1] - coordinates[i][1]) < 0.00001, 'Latitude should fall within reasonable treshold of expected');
-  };
+  }
   assert.end();
 });
 
@@ -44,7 +44,7 @@ test('maneuvers v5', function (assert) {
     assert.ok(Math.abs(timesExpected[i] - times[i]) < 0.00001, 'Time should fall within reasonable threshold of expected');
     assert.ok(Math.abs(coordinatesExpected[i][0] - coordinates[i][0]) < 0.00001, 'Latitude should fall within reasonable treshold of expected');
     assert.ok(Math.abs(coordinatesExpected[i][1] - coordinates[i][1]) < 0.00001, 'Latitude should fall within reasonable treshold of expected');
-  };
+  }
   assert.end();
 });
 
@@ -67,7 +67,7 @@ test('maneuvers v5 in acceldecel mode', function (assert) {
     assert.ok(Math.abs(timesExpected[i] - times[i]) < 0.00001, 'Time should fall within reasonable threshold of expected');
     assert.ok(Math.abs(coordinatesExpected[i][0] - coordinates[i][0]) < 0.00001, 'Latitude should fall within reasonable treshold of expected');
     assert.ok(Math.abs(coordinatesExpected[i][1] - coordinates[i][1]) < 0.00001, 'Latitude should fall within reasonable treshold of expected');
-  };
+  }
   assert.end();
 });
 
