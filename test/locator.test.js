@@ -1,6 +1,76 @@
 var Locator = require('../lib/locator');
 var test = require('tape');
 
+test('maneuvers v4', function (assert) {
+  var geojson = JSON.parse(JSON.stringify(require('./fixtures/rmnp.v4.json')));
+  var locator = new Locator(geojson);
+  var timesExpected = [ 0, 5000, 47000, 197000, 243000 ];
+  var coordinatesExpected = [
+    [ -105.58171, 40.366241 ],
+    [ -105.581888, 40.36608 ],
+    [ -105.585087, 40.365885 ],
+    [ -105.585769, 40.358648 ],
+    [ -105.590118, 40.358022 ]
+  ];
+  var times = locator.maneuvers().times;
+  var coordinates = locator.maneuvers().coordinates;
+  var length = times.length;
+
+  assert.equal(times.length, coordinates.length, 'Times and coordinates array lengths should be equal');
+  for (var i = 0; i < length; i++) {
+    assert.ok(Math.abs(timesExpected[i] - times[i]) < 0.00001, 'Time should fall within reasonable threshold of expected');
+    assert.ok(Math.abs(coordinatesExpected[i][0] - coordinates[i][0]) < 0.00001, 'Latitude should fall within reasonable treshold of expected');
+    assert.ok(Math.abs(coordinatesExpected[i][1] - coordinates[i][1]) < 0.00001, 'Latitude should fall within reasonable treshold of expected');
+  };
+  assert.end();
+});
+
+test('maneuvers v5', function (assert) {
+  var geojson = JSON.parse(JSON.stringify(require('./fixtures/rmnp.v5.json')));
+  var locator = new Locator(geojson);
+  var timesExpected = [ 0, 47900, 220700, 257400 ];
+  var coordinatesExpected = [
+    [ -105.581675, 40.366194 ],
+    [ -105.585075, 40.365892 ],
+    [ -105.586052, 40.358819 ],
+    [ -105.590121, 40.358023 ]
+  ];
+  var times = locator.maneuvers().times;
+  var coordinates = locator.maneuvers().coordinates;
+  var length = times.length;
+
+  assert.equal(times.length, coordinates.length, 'Times and coordinates array lengths should be equal');
+  for (var i = 0; i < length; i++) {
+    assert.ok(Math.abs(timesExpected[i] - times[i]) < 0.00001, 'Time should fall within reasonable threshold of expected');
+    assert.ok(Math.abs(coordinatesExpected[i][0] - coordinates[i][0]) < 0.00001, 'Latitude should fall within reasonable treshold of expected');
+    assert.ok(Math.abs(coordinatesExpected[i][1] - coordinates[i][1]) < 0.00001, 'Latitude should fall within reasonable treshold of expected');
+  };
+  assert.end();
+});
+
+test('maneuvers v5 in acceldecel mode', function (assert) {
+  var geojson = JSON.parse(JSON.stringify(require('./fixtures/rmnp.v5.json')));
+  var locator = new Locator(geojson, {'spacing': 'acceldecel'});
+  var timesExpected = [ 0, 46318, 219141, 259744 ];
+  var coordinatesExpected = [
+    [ -105.581675, 40.366194 ],
+    [ -105.585075, 40.365892 ],
+    [ -105.586052, 40.358819 ],
+    [ -105.590121, 40.358023 ]
+  ];
+  var times = locator.maneuvers().times;
+  var coordinates = locator.maneuvers().coordinates;
+  var length = times.length;
+
+  assert.equal(times.length, coordinates.length, 'Times and coordinates array lengths should be equal');
+  for (var i = 0; i < length; i++) {
+    assert.ok(Math.abs(timesExpected[i] - times[i]) < 0.00001, 'Time should fall within reasonable threshold of expected');
+    assert.ok(Math.abs(coordinatesExpected[i][0] - coordinates[i][0]) < 0.00001, 'Latitude should fall within reasonable treshold of expected');
+    assert.ok(Math.abs(coordinatesExpected[i][1] - coordinates[i][1]) < 0.00001, 'Latitude should fall within reasonable treshold of expected');
+  };
+  assert.end();
+});
+
 test('step v4', function (assert) {
   var geojson = JSON.parse(JSON.stringify(require('./fixtures/rmnp.v4.json')));
   var locator = new Locator(geojson);
