@@ -46,6 +46,12 @@ Generate the location of an event, in terms of step number or coordinates, given
 
 -   `directions` **[Object](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)** Response from Mapbox Directions API.
 
+#### Locator.maneuvers
+
+Get times (milliseconds) and coordinates for the maneuvers along the route.
+
+Returns **[Object](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object)** Object with `times` and `coordinates` arrays for maneuvers along route.
+
 #### Locator.step
 
 Find the current [Mapbox Directions API step](https://www.mapbox.com/api-documentation/#retrieve-directions) given a time along the route.
