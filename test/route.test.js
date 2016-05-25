@@ -90,7 +90,7 @@ test('route', function(t) {
     ];
     var expectedTimes = [ 41791, 42525, 44245, 46318 ];
  
-    var firstStep = interpolateAccelDecel(firstThree, 5)[0];
+    var firstStep = interpolateAccelDecel(firstThree)[0];
     assert.deepEqual(firstStep.geometry.coordinates.splice(-4), expectedCoords);
     assert.deepEqual(firstStep.properties.coordinateProperties.times.splice(-4), expectedTimes);
 
@@ -347,7 +347,7 @@ test('interpolateAccelDecel', function(t) {
   var garageSteps = garage.routes[0].legs[0].steps;
 
   t.test('garage - steps', function(assert) {
-    var steps = interpolateAccelDecel(garageSteps, 5);
+    var steps = interpolateAccelDecel(garageSteps);
     var expected = require('./expected/garage-acceldecel-steps.json');
     assert.deepEqual(steps, expected);
     assert.end();
@@ -440,7 +440,7 @@ test('interpolateAccelDecel [synthetic]', function(assert) {
     }
   ];
 
-  var interpolated = interpolateAccelDecel(input, 5);
+  var interpolated = interpolateAccelDecel(input);
   assert.deepEqual(
     interpolated[0].geometry.coordinates[0],
     input[0].geometry.coordinates[0],
